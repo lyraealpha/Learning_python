@@ -19,7 +19,7 @@ def timer(defined_function):  # time decorator
     return wrapper
 
 
-class CorrelationClculator:
+class CorrelationCalculator:
 
     def __init__(self, lncRNA_exp, mRNA_exp, method, outpath, key, cor, pvalue):
         self.mRNA_exp, self.lncRNA_exp, self.outpath =[os.path.abspath(x) for x in [mRNA_exp, lncRNA_exp, outpath]]
@@ -106,5 +106,5 @@ if __name__ == '__main__':
     if not all([args.lncRNA_exp, args.mRNA_exp, args.outpath]):
         parser.print_help()
         sys.exit(1)
-    CorrelationClculator(args.lncRNA_exp, args.mRNA_exp, args.method,
+    CorrelationCalculator(args.lncRNA_exp, args.mRNA_exp, args.method,
                          args.outpath, args.key, args.cor, args.pvalue).cal_cor_pval()
